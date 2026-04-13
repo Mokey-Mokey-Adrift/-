@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>Курсовой проект</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Викторина с вопросами из файла</h1>
+        
+<!-- Панель загрузки викторин -->
+        <div class="file-controls">
+            <label for="fileInput" class="btn"> Загрузить вопросы (JSON/TXT)</label>
+            <input type="file" id="fileInput" accept=".json, .txt" style="display: none;">
+            <span id="fileName">Файл не выбран</span>
+        </div>
+
+<!-- Основной блок викторины -->
+        <div class="quiz-area" id="quizArea" style="display: none;">
+            <div class="header-info">
+                <span id="questionCounter">Вопрос 1 / X</span>
+                <span id="scoreDisplay"> Очки: 0</span>
+            </div>
+            <div class="question" id="questionText">Текст вопроса</div>
+            <div class="options" id="optionsContainer">
+            </div>
+            <div class="feedback" id="feedbackMessage"></div>
+            <button class="next-btn" id="nextBtn" disabled>Следующий вопрос</button>
+        </div>
+
+<!-- Кнопка показать форму добавления -->
+        <button class="toggle-form-btn" id="toggleFormBtn">Добавить новый вопрос</button>
+
+<!-- Добавление вопросов -->
+        <div class="add-form" id="addForm" style="display: none;">
+            <h3>Новый вопрос</h3>
+            <input type="text" id="newQuestion" placeholder="Текст вопроса" class="input-field">
+            <input type="text" id="opt1" placeholder="Вариант 1" class="input-field">
+            <input type="text" id="opt2" placeholder="Вариант 2" class="input-field">
+            <input type="text" id="opt3" placeholder="Вариант 3" class="input-field">
+            <input type="text" id="opt4" placeholder="Вариант 4" class="input-field">
+            <label>Правильный ответ:</label>
+            <div class="radio-group">
+                <label><input type="radio" name="correctOpt" value="0" checked> 1</label>
+                <label><input type="radio" name="correctOpt" value="1"> 2</label>
+                <label><input type="radio" name="correctOpt" value="2"> 3</label>
+                <label><input type="radio" name="correctOpt" value="3"> 4</label>
+            </div>
+            <button class="submit-btn" id="addQuestionBtn">Сохранить вопрос</button>
+            <p id="formError" class="error-message"></p>
+        </div>
+
+<!-- Результаты -->
+        <div class="result-area" id="resultArea" style="display: none;">
+            <h2>Викторина завершена!</h2>
+            <p id="finalScore"></p>
+            <button class="restart-btn" id="restartBtn">Пройти заново</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
