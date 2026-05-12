@@ -16,11 +16,11 @@
 git quiz [имя_папки]
 
 git quiz my-quiz
-
+```
 ### Способ 2: Обычное клонирование
-
+```bash
 git clone https://github.com/Mokey-Mokey-Adrift/Hexlet-quiz.git
-
+```
 ### Способ 3: Скачать ZIP
 Нажмите зелёную кнопку Code → Download ZIP на странице репозитория и распакуйте архив.
 
