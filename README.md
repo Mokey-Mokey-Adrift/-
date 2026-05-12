@@ -12,17 +12,28 @@
 
 ### Способ 1: Клонирование через git alias (рекомендуется)
 Если вы настроили алиас:
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9889466fdf82e043e9113a1770b6ac2b55c7b44f
 ```bash
 git quiz [имя_папки]
 
 git quiz my-quiz
 
+<<<<<<< HEAD
 ### Способ 2: Обычное клонирование
 
 git clone https://github.com/Mokey-Mokey-Adrift/Hexlet-quiz.git
 
 ### Способ 3: Скачать ZIP
+=======
+Способ 2: Обычное клонирование
+
+git clone https://github.com/Mokey-Mokey-Adrift/Hexlet-quiz.git
+
+Способ 3: Скачать ZIP
+>>>>>>> 9889466fdf82e043e9113a1770b6ac2b55c7b44f
 Нажмите зелёную кнопку Code → Download ZIP на странице репозитория и распакуйте архив.
 
 Запуск
@@ -48,7 +59,10 @@ git clone https://github.com/Mokey-Mokey-Adrift/Hexlet-quiz.git
 ├── app.js          # Логика приложения
 ├── questions.json  # Демо-вопросы (опционально)
 └── README.md       # Этот файл
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9889466fdf82e043e9113a1770b6ac2b55c7b44f
 Технологии
 HTML5
 CSS3
