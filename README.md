@@ -43,8 +43,8 @@ git clone https://github.com/Mokey-Mokey-Adrift/Hexlet-quiz.git
 ```
 
 ## Технологии
-HTML5
-CSS3
-JavaScript (ES6+)
-LocalStorage
-FileReader API
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- LocalStorage
+- FileReader API
