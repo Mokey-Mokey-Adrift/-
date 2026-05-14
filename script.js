@@ -29,6 +29,22 @@ const opt3 = document.getElementById('opt3');
 const opt4 = document.getElementById('opt4');
 const correctRadio = document.querySelectorAll('input[name="correctOpt"]');
 
+
+// ЗАГРУЗКА ИЗ ЛОКАЛА
+const saved = localStorage.getItem('quizQuestions');
+if (saved) {
+    try {
+        questions = JSON.parse(saved);
+        if (questions.length > 0) {
+            quizArea.style.display = 'block';
+            renderQuestion();
+            updateScore();
+        }
+    } catch (e) {
+        console.log('Ошибка загрузки из локала:', e.message);
+    }
+}
+
 // ЗАГРУЗКА ИЗ JSON-ФАЙЛА 
 fileInput.addEventListener('change', (e) => {
     const file = e.target.files[0];
@@ -45,6 +61,7 @@ fileInput.addEventListener('change', (e) => {
                 throw new Error('Файл должен содержать непустой массив вопросов');
             }
             questions = data;
+            localStorage.setItem('quizQuestions', JSON.stringify(questions));
             currentIndex = 0;
             score = 0;
             quizArea.style.display = 'block';
@@ -188,6 +205,9 @@ addQuestionBtn.addEventListener('click', () => {
 
     // Добавляем в массив
     questions.push(newQ);
+
+    // Сохраняем в локал
+    localStorage.setItem('quizQuestions', JSON.stringify(questions));
 
     // Очищаем форму
     newQuestion.value = '';
